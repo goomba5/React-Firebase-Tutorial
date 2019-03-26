@@ -28,8 +28,8 @@ class SignIn extends Component {
             <input type="email" id="email" onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="Password">Password</label>
-            <input type="Password" id="Password" onChange={this.handleChange} />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Login</button>
