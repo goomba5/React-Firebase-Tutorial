@@ -7,16 +7,13 @@ const createNotification = notification => {
     .firestore()
     .collection("notifications")
     .add(notification)
-    .then(doc => {
-      console.log("Notification added", doc);
-    });
+    .then(doc => console.log("notification added", doc));
 };
 
 exports.projectCreated = functions.firestore
   .document("projects/{ projectId }")
-  .onCreate(doc => {
+  .onCreate((doc, context) => {
     const project = doc.data();
-
     const notification = {
       content: "Added a new project",
       user: `${project.authorFirstName} ${project.authorLastName}`,
